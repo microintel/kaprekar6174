@@ -1,0 +1,458 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaprekar-MI</title>
+<link rel="manifest" href="manifest.json" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<style type="text/css">
+
+body{
+
+color:white;
+background-color:black;
+padding:0;
+margin:0;
+width:100%;
+height:100%;
+}
+
+
+.divCh{
+display:flex;
+flex-direction:column;
+border:1px solid white;
+width:100%;
+padding:5px;
+margin:5px;
+width:100%;
+flex-grow:1;
+border-radius:7px;
+}
+
+.divCh font{
+border-bottom:1px solid grey;
+padding:3px;
+}
+
+.divCh font:nth-child(1){
+padding:6px;
+border-bottom:1px solid grey;
+}
+.divCh font:nth-child(5){
+padding:6px;
+border-bottom:none;
+}
+.divCh font:nth-child(2){
+padding:6px;
+color:red;
+}
+
+font{
+margin:3px;
+}
+
+.divCh font:nth-child(1){
+text-align:center;
+justify-content:center;
+}
+
+#out{
+display:flex;
+padding:0;
+margin:5px;
+flex-wrap:wrap;
+
+}
+font{
+
+display:flex;
+justify-content:space-between;
+}
+.diff{
+color:lightgreen;
+
+}
+.tab img,.tab table{
+width:90%;
+}
+
+@media(min-width:700px){
+.divCh{
+
+width:30%;
+}
+.inp{
+width:40%;
+height:2rem;
+}
+.inp input{
+width:20%;
+}
+.inp button{
+width:15%;
+}
+.tab img,.tab table{
+width:60%;
+}
+
+
+}
+
+
+#hea{
+margin:7px;
+width:auto;
+height:60px;
+}
+
+.inp{
+display:flex;
+padding:3px;
+margin-left:2%;
+gap:5px;
+width:93%;
+justify-content:center;
+}
+.inp input{
+width:35%;
+margin:0;
+background-color:transparent;
+color:white;
+border:1.5px solid white;
+border-radius: 7px;
+}
+.inp button:hover , .inp input:hover{
+background-color:lightdark;
+}
+.inp button{
+ width:20%;
+ margin:0;
+ padding:7px;
+ background-color:transparent;
+ color:white;
+ border:1.5px solid white;
+ border-radius: 7px;
+}
+.inp input::placeholder{
+color:red;
+}
+.inp input:hover, .inp button:hover{
+border:1.5px solid red;
+}
+
+#kapSum{
+padding:3px;
+
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+padding:3px;
+justify-content:space-evenly;
+width:100%;
+}
+#kapSum font{
+display:flex;
+color:red;
+}
+
+.learn{
+padding:5px;
+margin:5px;
+}
+table{
+border:2px solid white;
+padding:3px;
+border-radius:7px;
+margin:10px;
+border-collapse:collapse;
+}
+th,td{
+padding:4px;
+border-radius:7px;
+text-align:center;
+}
+
+.tab{
+display:flex;
+gap:10px;
+width:100%;
+flex-grow:1;
+flex-wrap:wrap;
+border-radius:7px;
+
+}
+
+
+
+i,a{
+color:white;
+text-decoration:none;
+}
+
+</style>
+
+</head>
+<body>
+<center>
+<img id="hea" src="karlogo.png" alt="Typing SVG" />
+</center>
+
+<div class="inp">
+<button id="lbtn"> Learn ? </button><button id="rand"> Random </button><input placeholder="Enter" type="number" id="inpp" value="1234"><button onclick="kapd()"> Check </button> 
+</div>
+<hr>
+<div id="kapSum">
+<font></font>
+<font> </font>
+<font> </font>
+<font> </font>
+</div>
+
+
+<div class="learn" id="lee">
+<h2 style="margin:1px;"> Kaprekar Constant  </h2>
+<div id="lea" class="tab">
+<center>
+<table border="1">
+ <tr>
+    <th>Digits</th><th> Kaprekar's Constant </th>
+ </tr>
+ <tr>
+ <td>3</td><td>495</td>
+ </tr>
+ <tr>
+ <td> 4 </td><td> 6174 </td>
+ </tr>
+ <tr>
+ <td> 5 </td><td> 53955, 59994 , 62964, 71973, 83952, 74943 , 61974, 82962, 75933, 63954 </td>
+ </tr>
+ <tr>
+ <td> 6 </td><td> 420876, 851742, 750843, 840852, 860832, 862632, 642654 , 631764 , 549945 </td>
+ </tr>
+ <tr>
+ <td> 7 </td><td> 7509843, 9529641, 8719722, 8649432, 7519743, 8429652, 7619733, 8439552 </td>
+ </tr>
+ <tr>
+ <td> 8 </td><td> 43208766, 85317642, 75308643, 84308652, 86308632, 86326632, 64326654 , 64308654, 83208762, 86526432 , 97508421 , 63317664 </td>
+ </tr>
+ </tr>
+
+</table>
+
+<img style="border-radius:7px;"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMWUqqGj_EGNb6YYr7QStqCycXVqfl-2hXgmgCQKdShxFeevEpBUK2WJJx&s=10">
+</center>
+</div>
+<p>Kaprekar Constant is a special number in mathematics, specifically 6174, discovered by the Indian mathematician D.R. Kaprekar in 1949. It is the result of a fascinating process applied to four-digit numbers. The Kaprekar constant is notable for its property: starting with almost any four-digit number and repeatedly applying a simple rule, you always arrive at 6174 within a few iterations.</p>
+<h3> What is Kaprekar's Process? </h3>
+<p>
+Kaprekar's process is a sequence of steps applied to a four-digit number :
+<br>
+<ul>
+<li>1. Choose any four-digit number (at least two digits must be distinct).</li>
+<li>2. Arrange its digits in descending and ascending order to form two new numbers.</li>
+<li> Example </li>
+For 4321, descending: 4321, ascending: 1234.
+<li> 3. Subtract the smaller number from the larger number.</li>
+<li> 4. Repeat the process with the result. </li>
+
+Eventually, you'll arrive at 6174, the Kaprekar constant, in a few steps. Once you reach 6174, repeating the process will continue to return 6174 indefinitely.
+</ul>
+</p>
+
+<h3> Example</h3>
+<center>
+<img width="80%" style="border-radius:5px;" src="/storage/emulated/0/DCIM/Screenshots/kari.jpg">
+</center>
+<br>
+<h3> Learn More </h3>
+<ul>
+<li> <i style="color:white;" class="fa-brands fa-google"></i> <a href="https://www.google.com/search?q=kaprekar+constant&oq=k&gs_lcrp=EgZjaHJvbWUqDggBEEUYJxg7GIAEGIoFMggIABBFGCcYOzIOCAEQRRgnGDsYgAQYigUyBggCEEUYOzIGCAMQRRg7MgYIBBBFGDwyBggFEEUYPDIGCAYQRRg8MgYIBxBFGDwyBggIEEUYOTINCAkQABiRAhiABBiKBTIQCAoQLhjHARixAxjRAxiABDIKCAsQABixAxiABDIKCAwQLhixAxiABDIGCA0QRRg8MgYIDhBFGDzSAQgyMjI5ajBqNKgCArACAQ&client=ms-android-vivo-rvo2&sourceid=chrome-mobile&ie=UTF-8" > Kaprekar Constant</li>
+<li> <i class="fa-brands fa-youtube"></i> <a href="https://youtu.be/hmAgZ1sbxnk?si=Dd4WotyZa3fLD41A" > Kaprekar Model</a></li>
+
+</ul>
+</div>
+
+
+<div id="out"></div>
+
+
+
+<script type="text/javascript">
+
+document.getElementById("rand").addEventListener("click",function (){
+let i=document.querySelector("#inpp");
+i.value=parseInt(Math.floor(Math.random()*(9999-111)+111));
+kapd();
+});
+
+document.getElementById("lbtn").addEventListener("click",()=>{
+
+let xx=document.getElementById("lee");
+if(xx.style.display=="none"){
+xx.style.display="block";
+document.getElementById("kapSum").style.display="none";
+document.getElementById("out").style.display="none";
+}
+else{
+xx.style.display="none";
+document.getElementById("kapSum").style.display="flex";
+document.getElementById("out").style.display="flex";
+}
+});
+
+let a=0;
+let ac=0;
+let difV=0;
+let cou=1;
+function kapd(){
+document.getElementById("kapSum").style.display="flex";
+document.getElementById("out").style.display="flex";
+document.getElementById("lee").style.display="none";
+document.getElementById("out").innerHTML="";
+let ax = parseInt(document.getElementById("inpp").value) || 1234;
+a=ax;cou=1;ac=0;
+
+if(a>=1000 && a<=9999){
+while(a!==0 && ac!==a){
+
+let ascV= conAsc(a);
+let desV= conDsc(a);
+difV=desV-ascV;kapOut(a,ascV,desV,difV,cou);
+cou+=1;a=difV;ascV=0;desV=0;
+if(a==6174){ac=a;}
+}
+
+}
+
+if(a>=100 && a<=999){
+while(a!==0 && ac!==a){
+
+let ascV= conAsc(a);
+let desV= conDsc(a);
+difV=desV-ascV;kapOut(a,ascV,desV,difV,cou);
+cou+=1;a=difV;ascV=0;desV=0;
+if(a==495){ac=a;}
+}
+
+}
+
+
+
+if(a>=10000 && a<=99999){
+while(a!==0 && ac!==a){
+
+let ascV= conAsc(a);
+let desV= conDsc(a);
+difV=desV-ascV;kapOut(a,ascV,desV,difV,cou);
+cou+=1;a=difV;ascV=0;desV=0;
+let xxxv=[53955, 59994 , 62964, 71973, 83952, 74943 , 61974, 82962, 75933, 63954];
+xxxv.forEach((x)=>{
+if(x==a){ac=a}
+});
+}
+
+}
+
+
+if(a>=100000 && a<=999999){
+while(a!==0 && ac!==a){
+
+let ascV= conAsc(a);
+let desV= conDsc(a);
+difV=desV-ascV;kapOut(a,ascV,desV,difV,cou);
+cou+=1;a=difV;ascV=0;desV=0;
+let xxxv1=[420876, 851742, 750843, 840852, 860832, 862632, 642654 ,631764 , 549945];
+xxxv1.forEach((x)=>{
+if(x==a){ac=a}
+});
+
+
+}
+
+}
+
+
+
+
+if(a>=10000 && a<=99999){
+while(a!==0 && ac!==a){
+
+let ascV= conAsc(a);
+let desV= conDsc(a);
+difV=desV-ascV;kapOut(a,ascV,desV,difV,cou);
+cou+=1;a=difV;ascV=0;desV=0;
+let xxxv=[53955, 59994 , 62964, 71973, 83952, 74943 , 61974, 82962, 75933, 63954];
+xxxv.forEach((x)=>{
+if(x==a){ac=a}
+});
+}
+
+}
+
+
+if(a>=1000000 && a<=9999999){
+while(a!==0 && ac!==a){
+
+let ascV= conAsc(a);
+let desV= conDsc(a);
+difV=desV-ascV;kapOut(a,ascV,desV,difV,cou);
+cou+=1;a=difV;ascV=0;desV=0;
+let xxxv11=[7509843, 9529641, 8719722, 8649432, 7519743, 8429652, 7619733, 8439552];
+xxxv11.forEach((x)=>{
+if(x==a){ac=a}
+});
+
+
+}
+
+}
+
+
+if(a>=10000000 && a<=99999999){
+while(a!==0 && ac!==a){
+
+let ascV= conAsc(a);
+let desV= conDsc(a);
+difV=desV-ascV;kapOut(a,ascV,desV,difV,cou);
+cou+=1;a=difV;ascV=0;desV=0;
+let xxxv111=[43208766, 85317642, 75308643, 84308652, 86308632, 86326632, 64326654, 64308654, 83208762, 86526432 ,97508421, 63317664];
+xxxv111.forEach((x)=>{
+if(x==a){ac=a}
+});
+
+}
+}
+}
+
+function kapOut(a,ascV,desV,difV,cou){
+
+let num= document.createElement("font");num.className="numV";num.innerHTML=`<span> NUM </span> <span>${a} </span>`;
+let av1= document.createElement("font");av1.className="ascVal";av1.innerHTML=`<span> ASC </span> <span>${ascV} </span>`;
+let dv1= document.createElement("font");dv1.className="desVal";dv1.innerHTML=` <span> DESC</span> <span>${desV}</span>`;
+let div1= document.createElement("font");div1.className="difVal";div1.innerHTML= `<span>DIFF</span> <span> ${desV} - ${ascV} =  <span class="diff" >${difV}</span></span>`;
+let ste= document.createElement("font");ste.className="Step ";ste.innerHTML= ` <span>Step : </span> <span> &nbsp; ${cou}</span>`;
+
+let ouE= document.createElement("div");
+ouE.className="divCh";ouE.appendChild(ste);ouE.appendChild(num);ouE.appendChild(av1);ouE.appendChild(dv1);ouE.appendChild(div1);
+
+document.getElementById("out").appendChild(ouE);
+let x = document.getElementById("kapSum");
+x.children[0].innerHTML= "Digits    : &nbsp;<span style='color:white;'> "+document.getElementById("inpp").value.toString().length+"</span>";
+x.children[1].innerHTML="Input Num  : &nbsp;<span style='color:white;'>"+document.getElementById("inpp").value+"</span>";
+x.children[2].innerHTML=`Final Diff : &nbsp;<span style='color:white;'> ${difV}</span>`;
+x.children[3].innerHTML=`Total Step : &nbsp;<span style='color:white;'> ${cou}</span>`;
+
+}
+
+function conAsc(x){
+return parseInt(x.toString().split('').sort().join(''),10);
+}
+
+function conDsc(y){
+return parseInt(y.toString().split('').sort((x, y) => y - x).join(''), 10);
+}
+
+</script>
+
+</body>
+</html>
