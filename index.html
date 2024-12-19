@@ -189,7 +189,9 @@ i,a{
 color:white;
 text-decoration:none;
 }
+.kapCon{
 
+}
 </style>
 
 </head>
@@ -219,22 +221,22 @@ text-decoration:none;
     <th>Digits</th><th> Kaprekar's Constant </th>
  </tr>
  <tr>
- <td>3</td><td>495</td>
+ <td>3</td><td> <span class="kapCon"> 495 </span></td>
  </tr>
  <tr>
- <td> 4 </td><td> 6174 </td>
+ <td> 4 </td><td> <span class="kapCon"> 6174 </span></td>
  </tr>
  <tr>
- <td> 5 </td><td> 53955, 59994 , 62964, 71973, 83952, 74943 , 61974, 82962, 75933, 63954 </td>
+ <td> 5 </td><td> <span class="kapCon"> 53955 </span>, <span class="kapCon"> 59994 </span>, <span class="kapCon"> 62964 </span>, <span class="kapCon"> 71973 </span>, <span class="kapCon"> 83952 </span>, <span class="kapCon"> 74943</span> ,<span class="kapCon"> 61974 </span>,<span class="kapCon"> 82962 </span>,<span class="kapCon"> 75933 </span>, <span class="kapCon">63954 </span></td>
  </tr>
  <tr>
- <td> 6 </td><td> 420876, 851742, 750843, 840852, 860832, 862632, 642654 , 631764 , 549945 </td>
+ <td> 6 </td><td> <span class="kapCon"> 420876</span>, <span class="kapCon"> 851742</span>, <span class="kapCon"> 750843</span>, <span class="kapCon"> 840852</span>, <span class="kapCon"> 860832</span>, <span class="kapCon"> 862632</span>,<span class="kapCon"> 642654 </span>, <span class="kapCon"> 631764 </span>, <span class="kapCon">549945</span> </td>
  </tr>
  <tr>
- <td> 7 </td><td> 7509843, 9529641, 8719722, 8649432, 7519743, 8429652, 7619733, 8439552 </td>
+ <td> 7 </td><td> <span class="kapCon">7509843</span>, <span class="kapCon">9529641</span>, <span class="kapCon">8719722</span>, <span class="kapCon">8649432</span>, <span class="kapCon">7519743</span>, <span class="kapCon">8429652</span>, <span class="kapCon">7619733</span>, <span class="kapCon">8439552</span> </td>
  </tr>
  <tr>
- <td> 8 </td><td> 43208766, 85317642, 75308643, 84308652, 86308632, 86326632, 64326654 , 64308654, 83208762, 86526432 , 97508421 , 63317664 </td>
+ <td> 8 </td><td> <span class="kapCon">43208766</span>, <span class="kapCon">85317642</span>, <span class="kapCon">75308643</span>, <span class="kapCon">84308652</span>, <span class="kapCon">86308632</span>, <span class="kapCon">86326632<span class="kapCon">, <span class="kapCon">64326654</span> ,<span class="kapCon"> 64308654</span>, <span class="kapCon">83208762</span>, <span class="kapCon">86526432</span> , <span class="kapCon">97508421</span> ,<span class="kapCon"> 63317664</span> </td>
  </tr>
  </tr>
 
@@ -287,6 +289,20 @@ kapd();
 });
 
 document.getElementById("lbtn").addEventListener("click",()=>{
+
+let spCon=document.getElementsByClassName("kapCon");
+Array.from(spCon).forEach((x)=>{
+
+if(x.innerHTML==difV){
+x.style.color="red";
+}
+else{
+x.style.color="white";
+}
+
+});
+
+
 
 let xx=document.getElementById("lee");
 if(xx.style.display=="none"){
